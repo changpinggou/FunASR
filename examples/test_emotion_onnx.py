@@ -3,7 +3,10 @@ import sys
 import csv
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from voice_detector_emotion_onnx import VoiceDetectorEmotion as VoiceDetector
+# from voice_detector_emotion_onnx import VoiceDetectorEmotion as VoiceDetector
+
+from voice_detector_emotion_classfier_onnx import VoiceDetectorEmotion as VoiceDetector
+
 curDir = os.path.dirname(os.path.abspath(__file__))
 
 model_path = os.path.join(curDir, "emotion2vec_plus_large_onnx", "emotion2vec")
