@@ -1,0 +1,24 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "test_emotion_onnx",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./examples/test_emotion_onnx.py",
+            "console": "integratedTerminal",
+            "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
+        },
+        {
+            "name": "test_emotion_pytorch",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./examples/test_emotion_pytorch.py",
+            "console": "integratedTerminal",
+            "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
+        }
+    ]
+}
