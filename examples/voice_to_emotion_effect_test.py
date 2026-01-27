@@ -27,7 +27,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from voice_detector_emotion import VoiceDetectorEmotion as VoiceDetector
 
-voice_detector = VoiceDetector(model_id="iic/emotion2vec_base_finetuned")
+# voice_detector = VoiceDetector(model_id="iic/emotion2vec_base_finetuned")
+voice_detector = VoiceDetector(model_id="iic/emotion2vec_plus_large")
 
 # 假设的emotion_infer_task函数，需要根据实际情况实现
 def emotion_infer_task(emotion: str, voice_path: str) -> Tuple[bool, str, Exception]:
@@ -138,6 +139,7 @@ def traverse_emotion_voice(root_dir: str) -> Dict[str, List[str]]:
 
 # 初始化语音检测器
 curDir = os.path.dirname(os.path.abspath(__file__))
-audios_dir = os.path.join(curDir, "jialin_pi_class_dataset", "segments3")
+# audios_dir = os.path.join(curDir, "jialin_pi_class_dataset", "segments3")
+audios_dir = "/data/applechang/emotion_audio_dataset/validate/segments9"
 emotionFiles = traverse_emotion_voice(audios_dir)
 process_emotion_files(emotion_files=emotionFiles)

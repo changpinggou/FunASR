@@ -27,6 +27,15 @@
             "program": "./examples/export_emotion2vec_base_onnx.py",
             "console": "integratedTerminal",
             "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
-        }
+        },
+
+        {
+            "name": "test_emotion_pytorch_multipart",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./examples/test_emotion_pytorch_multipart.py",
+            "console": "integratedTerminal",
+            "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
+        },
     ]
 }
