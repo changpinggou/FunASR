@@ -93,7 +93,7 @@ class VoiceDetectorEmotion(VoiceDetector):
             # 下面代码段是直接调用FunASR 封装的推理函数
             output = self.model.generate(audio_datas, output_dir="./outputs", granularity="utterance", extract_embedding=False)
             
-            # 下面代码段是用来对比上面直接调用self.model.generate函数, 总共分如下几步
+            # 下面代码段是用来对比上面直接调用self.model.generate函数生成推理数据的, 总共分如下几步
             # 第一步：读取音频文件
             wav, sr = sf.read(abs_path)
 
@@ -114,6 +114,8 @@ class VoiceDetectorEmotion(VoiceDetector):
             pooled_feat = feats.mean(dim=1)
             # 第三步：线性投影
             off_logits = self.model.model.proj(pooled_feat)
+
+            x = torch.softmax(off_logits, dim=-1)
             # 第四步：找出最大值索引
             max_index = torch.argmax(off_logits, dim=-1).item()
 

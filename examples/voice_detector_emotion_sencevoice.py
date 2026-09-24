@@ -79,7 +79,7 @@ class VoiceDetectorEmotionSenceVoice(VoiceDetector):
             input=audioPath,
             cache={},
             language="zh",  # "zh", "en", "yue", "ja", "ko", "nospeech"
-            use_itn=True,
+            use_itn=False,
             batch_size_s=60,
         )
         elapsed_time = round((time.time() - startTime) * 1000, 2)
@@ -87,6 +87,14 @@ class VoiceDetectorEmotionSenceVoice(VoiceDetector):
         print(">>> model output: \n", res)
         # text = rich_transcription_postprocess(res[0]["text"])
         result = self.extract_content(res[0]["text"])
+        input_text = result["text"]
+        model = AutoModel(
+            model="iic/punc_ct-transformer_zh-cn-common-vocab272727-pytorch",
+            model_revision="v2.0.4", # 建议固定版本号
+        )
+
+        res = model.generate(input=input_text)
+
         if result == None:
             return "", 0, 0
         return result["emotion"], 0, elapsed_time

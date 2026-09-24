@@ -81,8 +81,8 @@ class VoiceDetector(ABC):
         """
         if source_type == "path":
             audio_data, sample_rate = self.load_audio_from_path(audio_source, data_type)
-            if sample_rate != target_sample_rate:
-                audio_data = librosa.resample(audio_data, orig_sr=sample_rate, target_sr=target_sample_rate)
+            # if sample_rate != target_sample_rate:
+            #     audio_data = librosa.resample(audio_data, orig_sr=sample_rate, target_sr=target_sample_rate)
             # 如果是双声道, 改成单声道
             if audio_data.ndim == 2:
                 audio_data = np.mean(audio_data, axis=1)

@@ -37,5 +37,23 @@
             "console": "integratedTerminal",
             "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
         },
+
+        {
+            "name": "emotion_classfier_debater",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./examples/emotion_classfier_debater.py",
+            "console": "integratedTerminal",
+            "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
+        },
+
+        {
+            "name": "sencevoice_asr",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./examples/sencevoice_asr.py",
+            "console": "integratedTerminal",
+            // "python": "/root/anaconda3/envs/emotion_finetune_env/bin/python"
+        },
     ]
 }

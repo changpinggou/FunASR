@@ -140,6 +140,7 @@ def traverse_emotion_voice(root_dir: str) -> Dict[str, List[str]]:
 # 初始化语音检测器
 curDir = os.path.dirname(os.path.abspath(__file__))
 # audios_dir = os.path.join(curDir, "jialin_pi_class_dataset", "segments3")
-audios_dir = "/data/applechang/emotion_audio_dataset/validate/segments9"
+# audios_dir = "/data/applechang/emotion_audio_dataset/validate/segments9"
+audios_dir = "/data/applechang/emotion_audio_dataset/jialin_merged"
 emotionFiles = traverse_emotion_voice(audios_dir)
 process_emotion_files(emotion_files=emotionFiles)
