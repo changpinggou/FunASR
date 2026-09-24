@@ -161,9 +161,6 @@ def emotion_prediction(voice_path: str) -> Tuple[str, Exception]:
         # result_emotion2vec_dict = voice_detector_emotion2vec.detect(voice_path, source_type="path")
         result_sencevoice_dict = voice_detector_sencevoice.detect(voice_path, source_type="path")
   
-
-
-
         # 过滤掉 prompt
         # if "prompt" in result_emotion2vec_dict:
         #     del result_emotion2vec_dict["prompt"]
